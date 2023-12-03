@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg-grid {
+            z-index: -2;
+            background-image: url(assets/bg-grid.png);
+            background-position-y: -9px;
+            background-position-x: -9px;
+            /* -webkit-mask-image: linear-gradient(to bottom, transparent, 10%, white, 90%, transparent); */
+            /* mask-image: linear-gradient(to bottom, transparent, 10%, white, 90%, transparent); */
+        }
+
+        .bg-black {
+            --tw-bg-opacity: 1;
+            background-color: rgb(13 15 20 / var(--tw-bg-opacity));
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vh;
+            transition: background-color 0.5s ease-out;
+
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg-grid bg-black container" id="myContainer">
+        <button onclick="changeColor()">Hey There Click me to change color</button>
+    </div>
+    <script>
+        function changeColor() {
+            const container = document.getElementById('myContainer');
+            container.classList.toggle('bg-black');
+        }
+    </script>
+</body>
+
+</html>
